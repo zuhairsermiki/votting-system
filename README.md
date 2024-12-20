@@ -133,15 +133,108 @@ void poll(){
                             }
 	            }
 }
-void resultna1(){
-cout<<"na1 ma aye ho\n";
 
-	
+
+void resultna1(){
+cout<<"...........RESULT OF NA-1.............\n";
+string sh;
+string sum1="";
+string sum2="";
+int s=0;
+string ma;
+int m=0;
+ifstream sha("na1c1.txt");
+while(sha){
+	getline(sha,sh);
+	sum1=sum1+sh+"\n";
+s++;
+}
+ifstream maq("na1c2.txt");
+while(maq){
+	getline(maq,ma);
+	sum2=sum2+ma+"\n";
+m++;
+}
+if(m>s){
+
+	cout<<"Maqoli won the eletion from "<<m-s<<" vote."<<endl;
+
+} else if(s>m){
+
+cout<<"Shaqoli won the eletion from "<<s-m<<" vote."<<endl;
+
+}else{
+	cout<<"maqoli and shaqoli get the same number of vote:  ..."<<endl;
+
+}
+cout<<"total number of vote cast in this election is :"<<s+m-2<<endl;
+cout<<"total number of vote to shaqoli is :"<<s-1<<endl;
+cout<<"total number of vote to maqoli is :"<<m-1<<endl;
+
+cout<<"if you want to check the list of total number of voter then type y/Y "<<endl;
+char c;
+cin>>c;
+if(c=='y'||c=='Y'){
+	cout<<"..........................................................."<<endl;
+	cout<<" \n\n\t\tlist of voter of shaqoli is ..\n"<<endl;
+	cout<<sum1;
+	cout<<"\n................................................\n";
+		cout<<"\n\n\t\t list of voter of maqoli is ..\n"<<endl;
+	cout<<sum2;
+}
 }
 
 void resultna2(){
 
-	cout<<"na2 ma aye ho\n";
+
+	cout<<"...........RESULT OF NA-2.............\n";
+string qo;
+string sum1="";
+string sum2="";
+int s=0;
+string ma;
+int m=0;
+ifstream qol("qoli.txt");
+while(qol){
+	getline(qol,qo);
+	sum1=sum1+qo+"\n";
+s++;
+}
+ifstream mal("mali.txt");
+while(mal){
+	getline(mal,ma);
+	sum2=sum2+ma+"\n";
+m++;
+}
+if(m>s){
+
+	cout<<"mali won the eletion from "<<m-s<<" vote."<<endl;
+
+} else if(s>m){
+
+cout<<"qoli won the eletion from "<<s-m<<" vote."<<endl;
+
+}else{
+	cout<<"mali and qoli get the same number of vote:  ..."<<endl;
+
+}
+cout<<"total number of vote cast in this election is :"<<s+m-2<<endl;
+cout<<"total number of vote to qoli is :"<<s-1<<endl;
+cout<<"total number of vote to mali is :"<<m-1<<endl;
+
+cout<<"if you want to check the list of total number of voter then type y/Y "<<endl;
+char c;
+cin>>c;
+if(c=='y'||c=='Y'){
+	cout<<"..........................................................."<<endl;
+	cout<<" \n\n\t\tlist of voter of qoli is ..\n"<<endl;
+	cout<<sum1;
+	cout<<"\n................................................\n";
+		cout<<"\n\n\t\t list of voter of mali is ..\n"<<endl;
+	cout<<sum2;
+}
+
+	
 }
 
 void polldep(){
@@ -160,7 +253,7 @@ void polldep(){
 		switch(check){
         case 1:
 		cout<<" result of NA_1:  ";
-        resultna2();
+        resultna1();
 
 
 		break;
@@ -171,7 +264,7 @@ void polldep(){
 		default:
 		cout<<"you enter a wrong credentials \n";
 		cout<<"if you want to try again enter Y/y\n";
-		cout<<" enter ...........\n"
+		cout<<" enter ...........\n";
 		
 		cin>>error;
 
